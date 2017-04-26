@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LengthErrorKind","Enumeraters a set of length related errors."]],"struct":[["LengthError","Generic length error for various types."]],"type":[["LengthResult","Result type for a `LengthError`."]]});

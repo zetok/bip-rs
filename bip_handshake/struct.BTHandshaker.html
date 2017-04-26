@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BTHandshaker` struct in crate `bip_handshake`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BTHandshaker">
+
+    <title>bip_handshake::BTHandshaker - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct BTHandshaker</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>bip_handshake</a></p><script>window.sidebarCurrent = {name: 'BTHandshaker', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>bip_handshake</a>::<wbr><a class="struct" href=''>BTHandshaker</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/bip_handshake/bittorrent/mod.rs.html#47-51' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct BTHandshaker&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,&nbsp;</span> { /* fields omitted */ }</pre><div class='docblock'><p>Bittorrent TCP peer handshaker.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="struct" href="../bip_handshake/struct.BTHandshaker.html" title="struct bip_handshake::BTHandshaker">BTHandshaker</a>&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../bip_handshake/struct.BTPeer.html" title="struct bip_handshake::BTPeer">BTPeer</a>&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'static,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/bip_handshake/bittorrent/mod.rs.html#82-135' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;C&gt;(chan: C, listen: <a class="enum" href="https://doc.rust-lang.org/nightly/std/net/addr/enum.SocketAddr.html" title="enum std::net::addr::SocketAddr">SocketAddr</a>, pid: <a class="type" href="../bip_handshake/type.PeerId.html" title="type bip_handshake::PeerId">PeerId</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/std/io/error/type.Result.html" title="type std::io::error::Result">Result</a>&lt;<a class="struct" href="../bip_handshake/struct.BTHandshaker.html" title="struct bip_handshake::BTHandshaker">BTHandshaker</a>&lt;T&gt;&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;C: <a class="trait" href="../bip_handshake/trait.Channel.html" title="trait bip_handshake::Channel">Channel</a>&lt;T&gt; + 'static,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Create a new BTHandshaker with the given PeerId and bind address which will
+forward metadata and handshaken connections onto the provided channel.</p>
+</div><h4 id='method.with_protocol' class="method"><span id='with_protocol.v' class='invisible'><code>fn <a href='#method.with_protocol' class='fnname'>with_protocol</a>&lt;C&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;chan: C, <br>&nbsp;&nbsp;&nbsp;&nbsp;listen: <a class="enum" href="https://doc.rust-lang.org/nightly/std/net/addr/enum.SocketAddr.html" title="enum std::net::addr::SocketAddr">SocketAddr</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;pid: <a class="type" href="../bip_handshake/type.PeerId.html" title="type bip_handshake::PeerId">PeerId</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;protocol: &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a><br>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/std/io/error/type.Result.html" title="type std::io::error::Result">Result</a>&lt;<a class="struct" href="../bip_handshake/struct.BTHandshaker.html" title="struct bip_handshake::BTHandshaker">BTHandshaker</a>&lt;T&gt;&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;C: <a class="trait" href="../bip_handshake/trait.Channel.html" title="trait bip_handshake::Channel">Channel</a>&lt;T&gt; + 'static,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Similar to BTHandshaker::new() but allows a client to specify a custom protocol
+that the handshaker will specify during the handshake.</p>
+
+<p>Panics if the length of the provided protocol exceeds 255 bytes.</p>
+</div><h4 id='method.register_hash' class="method"><span id='register_hash.v' class='invisible'><code>fn <a href='#method.register_hash' class='fnname'>register_hash</a>(&amp;self, hash: <a class="type" href="../bip_handshake/type.InfoHash.html" title="type bip_handshake::InfoHash">InfoHash</a>)</code></span></h4>
+<div class='docblock'><p>Register interest for the given InfoHash allowing connections for the given InfoHash to succeed. Connections
+already in the handshaking process may not be effected by this call.</p>
+
+<p>By default, a BTHandshaker will be interested in zero InfoHashs.</p>
+
+<p>This is a blocking operation.</p>
+</div><h4 id='method.deregister_hash' class="method"><span id='deregister_hash.v' class='invisible'><code>fn <a href='#method.deregister_hash' class='fnname'>deregister_hash</a>(&amp;self, hash: <a class="type" href="../bip_handshake/type.InfoHash.html" title="type bip_handshake::InfoHash">InfoHash</a>)</code></span></h4>
+<div class='docblock'><p>Deregister interest for the given InfoHash causing connections for the given InfoHash to fail. Connections
+already in the handshaking process may not be effected by this call.</p>
+
+<p>By default, a BTHandshaker will be interested in zero InfoHashs.</p>
+
+<p>This is a blocking operation.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../bip_handshake/struct.BTHandshaker.html" title="struct bip_handshake::BTHandshaker">BTHandshaker</a>&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/bip_handshake/bittorrent/mod.rs.html#53-59' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../bip_handshake/struct.BTHandshaker.html" title="struct bip_handshake::BTHandshaker">BTHandshaker</a>&lt;T&gt;</code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="../bip_handshake/trait.Handshaker.html" title="trait bip_handshake::Handshaker">Handshaker</a> for <a class="struct" href="../bip_handshake/struct.BTHandshaker.html" title="struct bip_handshake::BTHandshaker">BTHandshaker</a>&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/bip_handshake/bittorrent/mod.rs.html#137-157' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.MetadataEnvelope' class="type"><span id='MetadataEnvelope.t' class='invisible'><code>type <a href='../bip_handshake/trait.Handshaker.html#associatedtype.MetadataEnvelope' class="type">MetadataEnvelope</a> = T</code></span></h4>
+<div class='docblock'><p>Type that metadata will be passed back to the client as.</p>
+</div><h4 id='method.id' class="method"><span id='id.v' class='invisible'><code>fn <a href='../bip_handshake/trait.Handshaker.html#tymethod.id' class='fnname'>id</a>(&amp;self) -&gt; <a class="type" href="../bip_handshake/type.PeerId.html" title="type bip_handshake::PeerId">PeerId</a></code></span></h4>
+<div class='docblock'><p>PeerId exposed to peer discovery services.</p>
+</div><h4 id='method.port' class="method"><span id='port.v' class='invisible'><code>fn <a href='../bip_handshake/trait.Handshaker.html#tymethod.port' class='fnname'>port</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span></h4>
+<div class='docblock'><p>Port exposed to peer discovery services. <a href="../bip_handshake/trait.Handshaker.html#tymethod.port">Read more</a></p>
+</div><h4 id='method.connect' class="method"><span id='connect.v' class='invisible'><code>fn <a href='../bip_handshake/trait.Handshaker.html#tymethod.connect' class='fnname'>connect</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;expected: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../bip_handshake/type.PeerId.html" title="type bip_handshake::PeerId">PeerId</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;hash: <a class="type" href="../bip_handshake/type.InfoHash.html" title="type bip_handshake::InfoHash">InfoHash</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;addr: <a class="enum" href="https://doc.rust-lang.org/nightly/std/net/addr/enum.SocketAddr.html" title="enum std::net::addr::SocketAddr">SocketAddr</a><br>)</code></span></h4>
+<div class='docblock'><p>Connect to the given address with the InfoHash and expecting the PeerId.</p>
+</div><h4 id='method.metadata' class="method"><span id='metadata.v' class='invisible'><code>fn <a href='../bip_handshake/trait.Handshaker.html#tymethod.metadata' class='fnname'>metadata</a>(&amp;mut self, data: Self::<a class="trait" href="../bip_handshake/trait.Handshaker.html" title="trait bip_handshake::Handshaker">MetadataEnvelope</a>)</code></span></h4>
+<div class='docblock'><p>Send the given Metadata back to the client.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "bip_handshake";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

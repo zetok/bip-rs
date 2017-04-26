@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TcpListenerStream","Convenient object that wraps a listener stream `L`, and also implements `LocalAddr`."],["TcpTransport","Defines a `Transport` operating over TCP."]]});

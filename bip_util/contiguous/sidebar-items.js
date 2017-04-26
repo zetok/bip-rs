@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ContiguousBuffers","Struct for providing a ContiguousBuffer abstraction over many contiguous buffers."]],"trait":[["ContiguousBuffer","Trait for metadata, reading, and writing to a contiguous buffer that doesn't re allocate."]]});

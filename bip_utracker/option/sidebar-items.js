@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AnnounceOptions","Set of announce options used to provide trackers with extra information."],["URLDataOption","Concatenated PATH and QUERY of a UDP tracker URL."]],"trait":[["AnnounceOption","Trait for supplying optional information in an AnnounceRequest."]]});

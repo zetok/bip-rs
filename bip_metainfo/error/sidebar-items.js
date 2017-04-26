@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ParseErrorKind","The kind of an error."]],"struct":[["ParseError","The Error type."]],"trait":[["ParseResultEx","Additional methods for `Result`, for easy interaction with this crate."]],"type":[["ParseResult","Convenient wrapper around `std::Result`."]]});

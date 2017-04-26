@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BencodeParseErrorKind` enum in crate `bip_bencode`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BencodeParseErrorKind">
+
+    <title>bip_bencode::BencodeParseErrorKind - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum BencodeParseErrorKind</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>bip_bencode</a></p><script>window.sidebarCurrent = {name: 'BencodeParseErrorKind', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>bip_bencode</a>::<wbr><a class="enum" href=''>BencodeParseErrorKind</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust enum'>pub enum BencodeParseErrorKind {
+    Msg(<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>),
+    BytesEmpty {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    },
+    InvalidByte {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    },
+    InvalidIntNoDelimiter {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    },
+    InvalidIntNegativeZero {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    },
+    InvalidIntZeroPadding {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    },
+    InvalidIntParseError {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    },
+    InvalidKeyOrdering {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        key: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;,
+    },
+    InvalidKeyDuplicates {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        key: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;,
+    },
+    InvalidLengthNegative {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    },
+    InvalidLengthOverflow {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    },
+    InvalidRecursionExceeded {
+        pos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+        max: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    },
+}</pre><div class='docblock'><p>The kind of an error.</p>
+</div><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.Msg' class='variant'><span id='Msg.v' class='invisible'><code>Msg(<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>)</code></span></span><div class='docblock'><p>A convenient variant for String.</p>
+</div><span id='variant.BytesEmpty' class='variant'><span id='BytesEmpty.v' class='invisible'><code>BytesEmpty</code></span></span><span class='docblock autohide sub-variant' id='variant.BytesEmpty.fields'><h3 class='fields'>Fields of <code>BytesEmpty</code></h3>
+
+                           <table><tr><td id='variant.BytesEmpty.field.pos'><span id='BytesEmpty.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr></table></span><span id='variant.InvalidByte' class='variant'><span id='InvalidByte.v' class='invisible'><code>InvalidByte</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidByte.fields'><h3 class='fields'>Fields of <code>InvalidByte</code></h3>
+
+                           <table><tr><td id='variant.InvalidByte.field.pos'><span id='InvalidByte.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr></table></span><span id='variant.InvalidIntNoDelimiter' class='variant'><span id='InvalidIntNoDelimiter.v' class='invisible'><code>InvalidIntNoDelimiter</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidIntNoDelimiter.fields'><h3 class='fields'>Fields of <code>InvalidIntNoDelimiter</code></h3>
+
+                           <table><tr><td id='variant.InvalidIntNoDelimiter.field.pos'><span id='InvalidIntNoDelimiter.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr></table></span><span id='variant.InvalidIntNegativeZero' class='variant'><span id='InvalidIntNegativeZero.v' class='invisible'><code>InvalidIntNegativeZero</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidIntNegativeZero.fields'><h3 class='fields'>Fields of <code>InvalidIntNegativeZero</code></h3>
+
+                           <table><tr><td id='variant.InvalidIntNegativeZero.field.pos'><span id='InvalidIntNegativeZero.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr></table></span><span id='variant.InvalidIntZeroPadding' class='variant'><span id='InvalidIntZeroPadding.v' class='invisible'><code>InvalidIntZeroPadding</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidIntZeroPadding.fields'><h3 class='fields'>Fields of <code>InvalidIntZeroPadding</code></h3>
+
+                           <table><tr><td id='variant.InvalidIntZeroPadding.field.pos'><span id='InvalidIntZeroPadding.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr></table></span><span id='variant.InvalidIntParseError' class='variant'><span id='InvalidIntParseError.v' class='invisible'><code>InvalidIntParseError</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidIntParseError.fields'><h3 class='fields'>Fields of <code>InvalidIntParseError</code></h3>
+
+                           <table><tr><td id='variant.InvalidIntParseError.field.pos'><span id='InvalidIntParseError.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr></table></span><span id='variant.InvalidKeyOrdering' class='variant'><span id='InvalidKeyOrdering.v' class='invisible'><code>InvalidKeyOrdering</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidKeyOrdering.fields'><h3 class='fields'>Fields of <code>InvalidKeyOrdering</code></h3>
+
+                           <table><tr><td id='variant.InvalidKeyOrdering.field.pos'><span id='InvalidKeyOrdering.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr><tr><td id='variant.InvalidKeyOrdering.field.key'><span id='InvalidKeyOrdering.v.key.v' class='invisible'><code>key:&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</code></span></td><td></td></tr></table></span><span id='variant.InvalidKeyDuplicates' class='variant'><span id='InvalidKeyDuplicates.v' class='invisible'><code>InvalidKeyDuplicates</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidKeyDuplicates.fields'><h3 class='fields'>Fields of <code>InvalidKeyDuplicates</code></h3>
+
+                           <table><tr><td id='variant.InvalidKeyDuplicates.field.pos'><span id='InvalidKeyDuplicates.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr><tr><td id='variant.InvalidKeyDuplicates.field.key'><span id='InvalidKeyDuplicates.v.key.v' class='invisible'><code>key:&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</code></span></td><td></td></tr></table></span><span id='variant.InvalidLengthNegative' class='variant'><span id='InvalidLengthNegative.v' class='invisible'><code>InvalidLengthNegative</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidLengthNegative.fields'><h3 class='fields'>Fields of <code>InvalidLengthNegative</code></h3>
+
+                           <table><tr><td id='variant.InvalidLengthNegative.field.pos'><span id='InvalidLengthNegative.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr></table></span><span id='variant.InvalidLengthOverflow' class='variant'><span id='InvalidLengthOverflow.v' class='invisible'><code>InvalidLengthOverflow</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidLengthOverflow.fields'><h3 class='fields'>Fields of <code>InvalidLengthOverflow</code></h3>
+
+                           <table><tr><td id='variant.InvalidLengthOverflow.field.pos'><span id='InvalidLengthOverflow.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr></table></span><span id='variant.InvalidRecursionExceeded' class='variant'><span id='InvalidRecursionExceeded.v' class='invisible'><code>InvalidRecursionExceeded</code></span></span><span class='docblock autohide sub-variant' id='variant.InvalidRecursionExceeded.fields'><h3 class='fields'>Fields of <code>InvalidRecursionExceeded</code></h3>
+
+                           <table><tr><td id='variant.InvalidRecursionExceeded.field.pos'><span id='InvalidRecursionExceeded.v.pos.v' class='invisible'><code>pos:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr><tr><td id='variant.InvalidRecursionExceeded.field.max'><span id='InvalidRecursionExceeded.v.max.v' class='invisible'><code>max:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code></span></td><td></td></tr></table></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="enum" href="../bip_bencode/enum.BencodeParseErrorKind.html" title="enum bip_bencode::BencodeParseErrorKind">BencodeParseErrorKind</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.description' class="method"><span id='description.v' class='invisible'><code>fn <a href='#method.description' class='fnname'>description</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h4>
+<div class='docblock'><p>A string describing the error kind.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../bip_bencode/enum.BencodeParseErrorKind.html" title="enum bip_bencode::BencodeParseErrorKind">BencodeParseErrorKind</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="enum" href="../bip_bencode/enum.BencodeParseErrorKind.html" title="enum bip_bencode::BencodeParseErrorKind">BencodeParseErrorKind</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class="method"><span id='fmt.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, fmt: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt; for <a class="enum" href="../bip_bencode/enum.BencodeParseErrorKind.html" title="enum bip_bencode::BencodeParseErrorKind">BencodeParseErrorKind</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(s: &amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; Self</code></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt; for <a class="enum" href="../bip_bencode/enum.BencodeParseErrorKind.html" title="enum bip_bencode::BencodeParseErrorKind">BencodeParseErrorKind</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.from-1' class="method"><span id='from.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(s: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self</code></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../bip_bencode/struct.BencodeParseError.html" title="struct bip_bencode::BencodeParseError">BencodeParseError</a>&gt; for <a class="enum" href="../bip_bencode/enum.BencodeParseErrorKind.html" title="enum bip_bencode::BencodeParseErrorKind">BencodeParseErrorKind</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.from-2' class="method"><span id='from.v-2' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(e: <a class="struct" href="../bip_bencode/struct.BencodeParseError.html" title="struct bip_bencode::BencodeParseError">BencodeParseError</a>) -&gt; Self</code></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "bip_bencode";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `HandshakeFilter` trait in crate `bip_handshake`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, HandshakeFilter">
+
+    <title>bip_handshake::HandshakeFilter - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait HandshakeFilter</p><div class="block items"><ul><li><a href="#required-methods">Required Methods</a></li><li><a href="#provided-methods">Provided Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='index.html'>bip_handshake</a></p><script>window.sidebarCurrent = {name: 'HandshakeFilter', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>bip_handshake</a>::<wbr><a class="trait" href=''>HandshakeFilter</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/bip_handshake/filter/mod.rs.html#54-74' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait HandshakeFilter {
+    fn <a href='#tymethod.as_any' class='fnname'>as_any</a>(&amp;self) -&gt; &amp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/any/trait.Any.html" title="trait core::any::Any">Any</a>;
+
+    fn <a href='#method.on_addr' class='fnname'>on_addr</a>(&amp;self, opt_addr: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="enum" href="https://doc.rust-lang.org/nightly/std/net/addr/enum.SocketAddr.html" title="enum std::net::addr::SocketAddr">SocketAddr</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a> { ... }
+    fn <a href='#method.on_prot' class='fnname'>on_prot</a>(&amp;self, opt_prot: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="enum" href="../bip_handshake/enum.Protocol.html" title="enum bip_handshake::Protocol">Protocol</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a> { ... }
+    fn <a href='#method.on_ext' class='fnname'>on_ext</a>(&amp;self, opt_ext: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../bip_handshake/struct.Extensions.html" title="struct bip_handshake::Extensions">Extensions</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a> { ... }
+    fn <a href='#method.on_hash' class='fnname'>on_hash</a>(&amp;self, opt_hash: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="type" href="../bip_handshake/type.InfoHash.html" title="type bip_handshake::InfoHash">InfoHash</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a> { ... }
+    fn <a href='#method.on_pid' class='fnname'>on_pid</a>(&amp;self, opt_pid: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="type" href="../bip_handshake/type.PeerId.html" title="type bip_handshake::PeerId">PeerId</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a> { ... }
+}</pre><div class='docblock'><p>Trait for filtering connections during handshaking.</p>
+
+<p>By default, all methods will return <code>FilterDecision::Pass</code> so that implementers filtering
+on only a few fields only have to implement the methods for those fields. Option is passed
+because some filters may be able to block peers before a connection is made, if data is
+required, return <code>FilterDecision::NeedData</code> when <code>None</code> is passed.</p>
+
+<p>In order for a handshake to pass the filter, each field has to be either not blocked, or 
+effectively &quot;whitelisted&quot; (see <code>FilterDecision::Allow</code>).</p>
+</div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.as_any' class='method'><span id='as_any.v' class='invisible'><code>fn <a href='#tymethod.as_any' class='fnname'>as_any</a>(&amp;self) -&gt; &amp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/any/trait.Any.html" title="trait core::any::Any">Any</a></code></span></h3><div class='docblock'><p>Used to implement generic equality.</p>
+
+<p>Should typically just return <code>self</code>.</p>
+</div></div>
+            <h2 id='provided-methods'>Provided Methods</h2>
+            <div class='methods'>
+        <h3 id='method.on_addr' class='method'><span id='on_addr.v' class='invisible'><code>fn <a href='#method.on_addr' class='fnname'>on_addr</a>(&amp;self, opt_addr: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="enum" href="https://doc.rust-lang.org/nightly/std/net/addr/enum.SocketAddr.html" title="enum std::net::addr::SocketAddr">SocketAddr</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a></code></span></h3><div class='docblock'><p>Make a filter decision based on the peer <code>SocketAddr</code>.</p>
+</div><h3 id='method.on_prot' class='method'><span id='on_prot.v' class='invisible'><code>fn <a href='#method.on_prot' class='fnname'>on_prot</a>(&amp;self, opt_prot: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="enum" href="../bip_handshake/enum.Protocol.html" title="enum bip_handshake::Protocol">Protocol</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a></code></span></h3><div class='docblock'><p>Make a filter decision based on the handshake <code>Protocol</code>.</p>
+</div><h3 id='method.on_ext' class='method'><span id='on_ext.v' class='invisible'><code>fn <a href='#method.on_ext' class='fnname'>on_ext</a>(&amp;self, opt_ext: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../bip_handshake/struct.Extensions.html" title="struct bip_handshake::Extensions">Extensions</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a></code></span></h3><div class='docblock'><p>Make a filter decision based on the <code>Extensions</code>.</p>
+</div><h3 id='method.on_hash' class='method'><span id='on_hash.v' class='invisible'><code>fn <a href='#method.on_hash' class='fnname'>on_hash</a>(&amp;self, opt_hash: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="type" href="../bip_handshake/type.InfoHash.html" title="type bip_handshake::InfoHash">InfoHash</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a></code></span></h3><div class='docblock'><p>Make a filter decision based on the <code>InfoHash</code>.</p>
+</div><h3 id='method.on_pid' class='method'><span id='on_pid.v' class='invisible'><code>fn <a href='#method.on_pid' class='fnname'>on_pid</a>(&amp;self, opt_pid: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="type" href="../bip_handshake/type.PeerId.html" title="type bip_handshake::PeerId">PeerId</a>&gt;) -&gt; <a class="enum" href="../bip_handshake/enum.FilterDecision.html" title="enum bip_handshake::FilterDecision">FilterDecision</a></code></span></h3><div class='docblock'><p>Make a filter decision based on the <code>PeerId</code>.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    </ul><script type="text/javascript" async
+                         src="../implementors/bip_handshake/trait.HandshakeFilter.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "bip_handshake";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

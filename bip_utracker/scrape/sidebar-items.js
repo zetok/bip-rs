@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ScrapeRequest","Scrape request sent from the client to the server."],["ScrapeRequestIter","Iterator over a number of InfoHashes."],["ScrapeResponse","Scrape response sent from the server to the client."],["ScrapeResponseIter","Iterator over a number of ScrapeStats."],["ScrapeStats","Status for a given InfoHash."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["IpAddr","Abstraction of some ip address."]],"fn":[["default_route_v4","Get the default route ipv4 socket."]]});

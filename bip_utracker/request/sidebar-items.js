@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["CONNECT_ID_PROTOCOL_ID","Global connection id for connect requests."]],"enum":[["RequestType","Enumerates all types of requests that can be made to a tracker."]],"struct":[["TrackerRequest","TrackerRequest which encapsulates any request sent to a tracker."]]});

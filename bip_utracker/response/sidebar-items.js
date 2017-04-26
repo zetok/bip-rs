@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ResponseType","Enumerates all types of responses that can be received from a tracker."]],"struct":[["TrackerResponse","TrackerResponse which encapsulates any response sent from a tracker."]]});

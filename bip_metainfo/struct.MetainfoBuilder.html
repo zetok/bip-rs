@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MetainfoBuilder` struct in crate `bip_metainfo`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MetainfoBuilder">
+
+    <title>bip_metainfo::MetainfoBuilder - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct MetainfoBuilder</p><div class="block items"><ul><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='index.html'>bip_metainfo</a></p><script>window.sidebarCurrent = {name: 'MetainfoBuilder', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>bip_metainfo</a>::<wbr><a class="struct" href=''>MetainfoBuilder</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/bip_metainfo/builder/mod.rs.html#55-61' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct MetainfoBuilder&lt;'a&gt; { /* fields omitted */ }</pre><div class='docblock'><p>Builder for generating a torrent file from some accessor.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../bip_metainfo/struct.MetainfoBuilder.html" title="struct bip_metainfo::MetainfoBuilder">MetainfoBuilder</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/bip_metainfo/builder/mod.rs.html#63-219' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class="struct" href="../bip_metainfo/struct.MetainfoBuilder.html" title="struct bip_metainfo::MetainfoBuilder">MetainfoBuilder</a>&lt;'a&gt;</code></span></h4>
+<div class='docblock'><p>Create a new MetainfoBuilder with some default values set.</p>
+</div><h4 id='method.set_main_tracker' class="method"><span id='set_main_tracker.v' class='invisible'><code>fn <a href='#method.set_main_tracker' class='fnname'>set_main_tracker</a>(self, tracker_url: &amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="../bip_metainfo/struct.MetainfoBuilder.html" title="struct bip_metainfo::MetainfoBuilder">MetainfoBuilder</a>&lt;'a&gt;</code></span></h4>
+<div class='docblock'><p>Set the main tracker that this torrent file points to.</p>
+</div><h4 id='method.set_creation_date' class="method"><span id='set_creation_date.v' class='invisible'><code>fn <a href='#method.set_creation_date' class='fnname'>set_creation_date</a>(self, secs_epoch: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>) -&gt; <a class="struct" href="../bip_metainfo/struct.MetainfoBuilder.html" title="struct bip_metainfo::MetainfoBuilder">MetainfoBuilder</a>&lt;'a&gt;</code></span></h4>
+<div class='docblock'><p>Set the creation date for the torrent.</p>
+
+<p>Defaults to the current time when the builder was created.</p>
+</div><h4 id='method.set_comment' class="method"><span id='set_comment.v' class='invisible'><code>fn <a href='#method.set_comment' class='fnname'>set_comment</a>(self, comment: &amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="../bip_metainfo/struct.MetainfoBuilder.html" title="struct bip_metainfo::MetainfoBuilder">MetainfoBuilder</a>&lt;'a&gt;</code></span></h4>
+<div class='docblock'><p>Set a comment for the torrent file.</p>
+</div><h4 id='method.set_created_by' class="method"><span id='set_created_by.v' class='invisible'><code>fn <a href='#method.set_created_by' class='fnname'>set_created_by</a>(self, created_by: &amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="../bip_metainfo/struct.MetainfoBuilder.html" title="struct bip_metainfo::MetainfoBuilder">MetainfoBuilder</a>&lt;'a&gt;</code></span></h4>
+<div class='docblock'><p>Set the created by for the torrent file.</p>
+</div><h4 id='method.set_private_flag' class="method"><span id='set_private_flag.v' class='invisible'><code>fn <a href='#method.set_private_flag' class='fnname'>set_private_flag</a>(self, is_private: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a class="struct" href="../bip_metainfo/struct.MetainfoBuilder.html" title="struct bip_metainfo::MetainfoBuilder">MetainfoBuilder</a>&lt;'a&gt;</code></span></h4>
+<div class='docblock'><p>Sets the private flag for the torrent file.</p>
+</div><h4 id='method.set_piece_length' class="method"><span id='set_piece_length.v' class='invisible'><code>fn <a href='#method.set_piece_length' class='fnname'>set_piece_length</a>(self, piece_length: <a class="enum" href="../bip_metainfo/enum.PieceLength.html" title="enum bip_metainfo::PieceLength">PieceLength</a>) -&gt; <a class="struct" href="../bip_metainfo/struct.MetainfoBuilder.html" title="struct bip_metainfo::MetainfoBuilder">MetainfoBuilder</a>&lt;'a&gt;</code></span></h4>
+<div class='docblock'><p>Sets the piece length for the torrent file.</p>
+</div><h4 id='method.build_as_bytes' class="method"><span id='build_as_bytes.v' class='invisible'><code>fn <a href='#method.build_as_bytes' class='fnname'>build_as_bytes</a>&lt;A, C&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;threads: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;accessor: A, <br>&nbsp;&nbsp;&nbsp;&nbsp;progress: C<br>) -&gt; <a class="type" href="../bip_metainfo/error/type.ParseResult.html" title="type bip_metainfo::error::ParseResult">ParseResult</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../bip_metainfo/trait.IntoAccessor.html" title="trait bip_metainfo::IntoAccessor">IntoAccessor</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;C: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.FnMut.html" title="trait core::ops::FnMut">FnMut</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'static,&nbsp;</span></code></span></h4>
+<div class='docblock'><p>Build the metainfo file from the given accessor and the number of worker threads.</p>
+
+<p>Worker threads are responsible for CPU bound tasks so if IO access is slow, increasing
+the number of workers may not be beneficial. This method WILL block until it completes.</p>
+
+<p>Returns a list of bytes that make up the complete metainfo file.</p>
+
+<p>Panics if threads is equal to zero.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "bip_metainfo";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

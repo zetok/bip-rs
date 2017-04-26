@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BRefAccess` trait in crate `bip_bencode`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BRefAccess">
+
+    <title>bip_bencode::BRefAccess - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait BRefAccess</p><div class="block items"><ul><li><a href="#associated-types">Associated Types</a></li><li><a href="#required-methods">Required Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='index.html'>bip_bencode</a></p><script>window.sidebarCurrent = {name: 'BRefAccess', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>bip_bencode</a>::<wbr><a class="trait" href=''>BRefAccess</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/bip_bencode/access/bencode.rs.html#17-37' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait BRefAccess&lt;'a&gt;: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a> {
+    type <a href='#associatedtype.BType' class="type">BType</a>: <a class="trait" href="../bip_bencode/trait.BRefAccess.html" title="trait bip_bencode::BRefAccess">BRefAccess</a>&lt;'a&gt;;
+    fn <a href='#tymethod.kind' class='fnname'>kind</a>&lt;'b&gt;(&amp;'b self) -&gt; <a class="enum" href="../bip_bencode/enum.BencodeRefKind.html" title="enum bip_bencode::BencodeRefKind">BencodeRefKind</a>&lt;'b, 'a, Self::<a class="trait" href="../bip_bencode/trait.BRefAccess.html" title="trait bip_bencode::BRefAccess">BType</a>&gt;;
+    fn <a href='#tymethod.str' class='fnname'>str</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;;
+    fn <a href='#tymethod.int' class='fnname'>int</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>&gt;;
+    fn <a href='#tymethod.bytes' class='fnname'>bytes</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;;
+    fn <a href='#tymethod.list' class='fnname'>list</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="trait" href="../bip_bencode/trait.BListAccess.html" title="trait bip_bencode::BListAccess">BListAccess</a>&lt;Self::<a class="trait" href="../bip_bencode/trait.BRefAccess.html" title="trait bip_bencode::BRefAccess">BType</a>&gt;&gt;;
+    fn <a href='#tymethod.dict' class='fnname'>dict</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="trait" href="../bip_bencode/trait.BDictAccess.html" title="trait bip_bencode::BDictAccess">BDictAccess</a>&lt;'a, Self::<a class="trait" href="../bip_bencode/trait.BRefAccess.html" title="trait bip_bencode::BRefAccess">BType</a>&gt;&gt;;
+}</pre><div class='docblock'><p>Trait for read access to some bencode type.</p>
+</div>
+            <h2 id='associated-types'>Associated Types</h2>
+            <div class='methods'>
+        <h3 id='associatedtype.BType' class='method'><span id='BType.t' class='invisible'><code>type <a href='#associatedtype.BType' class="type">BType</a>: <a class="trait" href="../bip_bencode/trait.BRefAccess.html" title="trait bip_bencode::BRefAccess">BRefAccess</a>&lt;'a&gt;</code></span></h3></div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.kind' class='method'><span id='kind.v' class='invisible'><code>fn <a href='#tymethod.kind' class='fnname'>kind</a>&lt;'b&gt;(&amp;'b self) -&gt; <a class="enum" href="../bip_bencode/enum.BencodeRefKind.html" title="enum bip_bencode::BencodeRefKind">BencodeRefKind</a>&lt;'b, 'a, Self::<a class="trait" href="../bip_bencode/trait.BRefAccess.html" title="trait bip_bencode::BRefAccess">BType</a>&gt;</code></span></h3><div class='docblock'><p>Access the bencode as a <code>BencodeRefKind</code>.</p>
+</div><h3 id='tymethod.str' class='method'><span id='str.v' class='invisible'><code>fn <a href='#tymethod.str' class='fnname'>str</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;</code></span></h3><div class='docblock'><p>Attempt to access the bencode as a <code>str</code>.</p>
+</div><h3 id='tymethod.int' class='method'><span id='int.v' class='invisible'><code>fn <a href='#tymethod.int' class='fnname'>int</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>&gt;</code></span></h3><div class='docblock'><p>Attempt to access the bencode as an <code>i64</code>.</p>
+</div><h3 id='tymethod.bytes' class='method'><span id='bytes.v' class='invisible'><code>fn <a href='#tymethod.bytes' class='fnname'>bytes</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;</code></span></h3><div class='docblock'><p>Attempt to access the bencode as an <code>[u8]</code>.</p>
+</div><h3 id='tymethod.list' class='method'><span id='list.v' class='invisible'><code>fn <a href='#tymethod.list' class='fnname'>list</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="trait" href="../bip_bencode/trait.BListAccess.html" title="trait bip_bencode::BListAccess">BListAccess</a>&lt;Self::<a class="trait" href="../bip_bencode/trait.BRefAccess.html" title="trait bip_bencode::BRefAccess">BType</a>&gt;&gt;</code></span></h3><div class='docblock'><p>Attempt to access the bencode as an <code>BListAccess</code>.</p>
+</div><h3 id='tymethod.dict' class='method'><span id='dict.v' class='invisible'><code>fn <a href='#tymethod.dict' class='fnname'>dict</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="trait" href="../bip_bencode/trait.BDictAccess.html" title="trait bip_bencode::BDictAccess">BDictAccess</a>&lt;'a, Self::<a class="trait" href="../bip_bencode/trait.BRefAccess.html" title="trait bip_bencode::BRefAccess">BType</a>&gt;&gt;</code></span></h3><div class='docblock'><p>Attempt to access the bencode as an <code>BDictAccess</code>.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;'a: 'b, 'b, T&gt; BRefAccess&lt;'a&gt; for &amp;'b T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../bip_bencode/trait.BRefAccess.html" title="trait bip_bencode::BRefAccess">BRefAccess</a>&lt;'a&gt;,&nbsp;</span></code></li>
+<li><code>impl&lt;'a&gt; BRefAccess&lt;'a&gt; for <a class="struct" href="../bip_bencode/struct.BencodeMut.html" title="struct bip_bencode::BencodeMut">BencodeMut</a>&lt;'a&gt;</code></li>
+<li><code>impl&lt;'a&gt; BRefAccess&lt;'a&gt; for <a class="struct" href="../bip_bencode/struct.BencodeRef.html" title="struct bip_bencode::BencodeRef">BencodeRef</a>&lt;'a&gt;</code></li>
+</ul><script type="text/javascript" async
+                         src="../implementors/bip_bencode/trait.BRefAccess.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "bip_bencode";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

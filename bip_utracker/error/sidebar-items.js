@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ErrorResponse","Error reported by the server and sent to the client."]]});

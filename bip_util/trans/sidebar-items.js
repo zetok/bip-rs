@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["LocallyShuffledIds","Provides transaction ids that are locally shuffled."],["SequentialIds","Generates sequentially unique ids and wraps when overflow occurs."]],"trait":[["TransactionIds",""]]});
